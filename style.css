@@ -1,0 +1,103 @@
+*, body {
+	margin: 0;
+	padding: 0;
+	font-family: "Tahoma";
+}
+
+#filter {
+	padding: 5px;
+	width: 250px;
+	height: 30px;
+}
+
+#add, #enlarge {
+	margin: 2px 0 0 2px;
+	width: 28px;
+	height: 28px;
+	opacity: 0.7;
+}
+
+.container {
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-areas:
+		'title'
+		'control'
+		'notes';
+}
+
+.title {
+	grid-area: title;
+	padding: 15px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.control {
+	grid-area: control;
+	padding: 10px;
+	background-color: #D2691E;
+	text-align: center;
+	display: grid;
+	grid-template-areas: 'filter button';
+	align-items: center;
+}
+
+.filterdiv {
+	grid-area: filter;
+	justify-self: end;
+	align-self: center;
+}
+
+.buttondiv {
+	grid-area: button;
+	justify-self: start;
+	align-self: center;
+}
+
+.notesdiv {
+	grid-area: notes;
+	justify-self: center;
+	padding: 10px;
+}
+
+.note {
+	margin: 10px;
+	border: 1px solid #AAAAAA;
+	background-color: #FFDEAD;
+	display: inline-block;
+	float: left;
+}
+
+.noteupper {
+	display: grid;
+	grid-template-areas: 'ntitle nbutton';
+}
+
+.notetitle {
+	grid-area: ntitle;
+	background-color: #FFDEAD;
+	width: 220px;
+	height: 30px;
+	border: 0;
+	padding: 5px;
+}
+
+.notebutton {
+	grid-area: nbutton;
+	margin: 5px;
+	width: 20px;
+	height: 20px;
+	opacity: 0.5;
+}
+
+.notecontent {
+	resize: vertical;
+	padding: 5px;
+	border: 1px solid #AAAAAA;
+	background-color: #FFDEAD;
+	width: 250px;
+	font-family: "Tahoma";
+}
