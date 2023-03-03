@@ -65,11 +65,11 @@
 }
 
 .note {
+	float: left;
 	margin: 10px;
 	border: 1px solid #AAAAAA;
 	background-color: #FFDEAD;
 	display: inline-block;
-	float: left;
 }
 
 .noteupper {
