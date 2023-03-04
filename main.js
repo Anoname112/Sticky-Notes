@@ -2,8 +2,24 @@ var d;
 var filter;
 var add;
 var notesdiv;
+var importdiv;
+var importcontent;
+var importbutton;
+var importcancel;
 
 var notesdata;
+
+function parseJSON (string) {
+    try {
+		var obj = JSON.parse(string);
+		if (obj && typeof obj === "object") {
+			return obj;
+		}
+    }
+    catch (e) { }
+	
+    return false;
+}
 
 function updateNote (index) {
 	notesdata[index].title = d.getElementById('notetitle' + index).value;
@@ -74,6 +90,38 @@ function copyToClipboard () {
 	navigator.clipboard.writeText(localStorage.getItem('notesdata'));
 }
 
+function openImportDialog () {
+	importdiv.style.visibility = 'visible';
+}
+
+function closeImportDialog () {
+	importdiv.style.visibility = 'hidden';
+	importcontent.value = '';
+}
+
+function importData () {
+	var json = parseJSON(importcontent.value);
+	if (json) {
+		var validData = true;
+		for (var i = 0; i < json.length; i++) {
+			if (json[i].title === undefined || json[i].content === undefined || json[i].height === undefined) {
+				validData = false;
+				break;
+			}
+		}
+		
+		if (validData) {
+			notesdata = json;
+			generateNotes();
+			saveToStorage();
+			closeImportDialog();
+			return;
+		}
+	}
+	
+	alert("Error: Invalid import data.");
+}
+
 function loadFromStorage () {
 	notesdata = JSON.parse(localStorage.getItem('notesdata'));
 	generateNotes();
@@ -88,6 +136,10 @@ window.onload = function () {
 	filter = d.getElementById('filter');
 	add = d.getElementById('add');
 	notesdiv = d.getElementById('notesdiv');
+	importdiv = d.getElementById('importdiv');
+	importcontent = d.getElementById('importcontent');
+	importbutton = d.getElementById('importbutton');
+	importcancel = d.getElementById('importcancel');
 	
 	window.onmouseup = resizeNotes;
 	
