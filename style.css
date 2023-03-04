@@ -11,7 +11,7 @@
 	height: 30px;
 }
 
-#add, #enlarge, #clipboard {
+#add, #enlarge, #clipboard, #import {
 	margin: 2px 0 0 2px;
 	width: 28px;
 	height: 28px;
@@ -101,4 +101,28 @@
 	background-color: #FFDEAD;
 	width: 250px;
 	font-family: "Tahoma";
+}
+
+#importdiv {
+	position: absolute;
+	top: 0; bottom: 0;
+	left: 0; right: 0;
+	margin: 10px;
+	border: 1px solid #000000;
+	background-color: #FFDEAD;
+	padding: 10px;
+	display: grid;
+	visibility: hidden;
+}
+
+.importcontentdiv, .importbuttondiv {
+	padding: 10px;
+	justify-self: center;
+	align-self: center;
+}
+
+#importcontent {
+	padding: 5px;
+	width: 80vw;
+	height: 80vh;
 }
