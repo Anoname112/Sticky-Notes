@@ -18,6 +18,12 @@
 	opacity: 0.7;
 }
 
+#add:hover, #enlarge:hover, #clipboard:hover, #import:hover {
+	cursor: pointer;
+	opacity: 1;
+	transition: opacity 0.5;
+}
+
 .container {
 	margin: 0;
 	padding: 0;
@@ -132,4 +138,9 @@
 	padding: 5px;
 	border: 1px solid #92290E;
 	background-color: #D2691E;
+}
+
+#importbutton:hover, #importcancel:hover {
+	background-color: #E2792E;
+	cursor: pointer;
 }
