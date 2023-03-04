@@ -92,6 +92,7 @@ function copyToClipboard () {
 
 function openImportDialog () {
 	importdiv.style.visibility = 'visible';
+	importcontent.focus();
 }
 
 function closeImportDialog () {
