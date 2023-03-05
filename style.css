@@ -5,24 +5,6 @@
 	font-size: 15px;
 }
 
-#filter {
-	padding: 5px;
-	width: 250px;
-	height: 30px;
-}
-
-#add, #enlarge, #clipboard, #import {
-	width: 28px;
-	height: 28px;
-	opacity: 0.7;
-}
-
-#add:hover, #enlarge:hover, #clipboard:hover, #import:hover {
-	cursor: pointer;
-	opacity: 1;
-	transition: opacity 0.5;
-}
-
 .container {
 	margin: 0;
 	padding: 0;
@@ -57,14 +39,33 @@
 	align-self: center;
 }
 
+#filter {
+	padding: 5px;
+	width: 250px;
+	height: 30px;
+}
+
 .buttondiv {
 	grid-area: button;
 	justify-self: start;
 	align-self: center;
 }
 
-.buttondiv span {
+.buttondiv div {
+	display: inline-block;
 	margin: 2px 0 0 2px;	
+}
+
+#add, #enlarge, #clipboard, #import {
+	width: 28px;
+	height: 28px;
+	opacity: 0.7;
+}
+
+#add:hover, #enlarge:hover, #clipboard:hover, #import:hover {
+	cursor: pointer;
+	opacity: 1;
+	transition: opacity 0.5;
 }
 
 .notesdiv {
