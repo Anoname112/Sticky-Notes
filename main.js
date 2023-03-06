@@ -61,7 +61,7 @@ function addNote () {
 	notesdata.push({
 		'title': '',
 		'content': '',
-		'height': 230
+		'height': noteheight
 	});
 	generateNotes();
 	saveToStorage();
@@ -93,12 +93,13 @@ function generateNotes () {
 	notesdiv.innerHTML = string;
 }
 
+function mouseLeave() {
+	clipboardtooltip.innerHTML = clipboardstring;
+}
+
 function copyToClipboard () {
 	navigator.clipboard.writeText(localStorage.getItem('notesdata'));
-	clipboardtooltip.innerHTML = "Data copied";
-	setTimeout(function () {
-		clipboardtooltip.innerHTML = "Copy data to clipboard";
-	}, 2000);
+	clipboardtooltip.innerHTML = copiedstring;
 }
 
 function openImportDialog () {
@@ -150,11 +151,18 @@ window.onload = function () {
 	enlargesvg = d.getElementById('enlargesvg');
 	clipboardsvg = d.getElementById('clipboardsvg');
 	importsvg = d.getElementById('importsvg');
+	
 	addtooltip = d.getElementById('addtooltip');
+	addtooltip.innerHTML = addstring;
 	enlargetooltip = d.getElementById('enlargetooltip');
+	enlargetooltip.innerHTML = enlargestring;
 	clipboardtooltip = d.getElementById('clipboardtooltip');
+	clipboardtooltip.innerHTML = clipboardstring;
 	importtooltip = d.getElementById('importtooltip');
+	importtooltip.innerHTML = importstring;
+	
 	notesdiv = d.getElementById('notesdiv');
+	
 	importdiv = d.getElementById('importdiv');
 	importcontent = d.getElementById('importcontent');
 	importbutton = d.getElementById('importbutton');

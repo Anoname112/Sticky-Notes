@@ -60,13 +60,13 @@
 
 .buttondiv div:hover #addtooltip, .buttondiv div:hover #enlargetooltip, .buttondiv div:hover #clipboardtooltip, .buttondiv div:hover #importtooltip {
 	visibility: visible;
-	opacity: 0.75;
+	opacity: 0.8;
 }
 
 #addsvg, #enlargesvg, #clipboardsvg, #importsvg {
 	width: 28px;
 	height: 28px;
-	opacity: 0.75;
+	opacity: 0.7;
 }
 
 #addsvg:hover, #enlargesvg:hover, #clipboardsvg:hover, #importsvg:hover {
@@ -78,13 +78,13 @@
 #addtooltip, #enlargetooltip, #clipboardtooltip, #importtooltip {
 	z-index: 1;
 	position: absolute;
-	bottom: 135%;
+	bottom: 130%;
 	left: 50%;
-	margin: 0 0 0 -66px;
+	margin: 0 0 0 -55px;
 	padding: 5px;
 	border-radius: 4px;
 	background-color: #222222;
-	width: 122px;
+	width: 100px;
 	font-size: 12px;
 	color: #FFFFFF;
 	visibility: hidden;
