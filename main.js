@@ -1,6 +1,13 @@
 var d;
 var filter;
-var add;
+var addsvg;
+var enlargesvg;
+var clipboardsvg;
+var importsvg;
+var addtooltip;
+var enlargetooltip;
+var clipboardtooltip;
+var importtooltip;
 var notesdiv;
 var importdiv;
 var importcontent;
@@ -88,6 +95,10 @@ function generateNotes () {
 
 function copyToClipboard () {
 	navigator.clipboard.writeText(localStorage.getItem('notesdata'));
+	clipboardtooltip.innerHTML = "Data copied";
+	setTimeout(function () {
+		clipboardtooltip.innerHTML = "Copy data to clipboard";
+	}, 2000);
 }
 
 function openImportDialog () {
@@ -135,7 +146,14 @@ function saveToStorage () {
 window.onload = function () {
 	d = document;
 	filter = d.getElementById('filter');
-	add = d.getElementById('add');
+	addsvg = d.getElementById('addsvg');
+	enlargesvg = d.getElementById('enlargesvg');
+	clipboardsvg = d.getElementById('clipboardsvg');
+	importsvg = d.getElementById('importsvg');
+	addtooltip = d.getElementById('addtooltip');
+	enlargetooltip = d.getElementById('enlargetooltip');
+	clipboardtooltip = d.getElementById('clipboardtooltip');
+	importtooltip = d.getElementById('importtooltip');
 	notesdiv = d.getElementById('notesdiv');
 	importdiv = d.getElementById('importdiv');
 	importcontent = d.getElementById('importcontent');

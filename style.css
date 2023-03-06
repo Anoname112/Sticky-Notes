@@ -62,13 +62,13 @@
 	opacity: 0.8;
 }
 
-#add, #enlarge, #clipboard, #import {
+#addsvg, #enlargesvg, #clipboardsvg, #importsvg {
 	width: 28px;
 	height: 28px;
 	opacity: 0.7;
 }
 
-#add:hover, #enlarge:hover, #clipboard:hover, #import:hover {
+#addsvg:hover, #enlargesvg:hover, #clipboardsvg:hover, #importsvg:hover {
 	cursor: pointer;
 	opacity: 1;
 	transition: opacity 0.3s;
