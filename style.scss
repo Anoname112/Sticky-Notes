@@ -1,6 +1,6 @@
 $sandSerif: "Tahoma", "Trebuchet MS", "Arial", "Helvetica";
+$textPadding: 5px;
 $tooltipWidth: 100px;
-$tooltipPadding: 5px;
 $noteBackgroundColor: #FFDEAD;
 $noteBorderColor: #AAAAAA;
 
@@ -47,7 +47,7 @@ $noteBorderColor: #AAAAAA;
 }
 
 #filter {
-	padding: 5px;
+	padding: $textPadding;
 	width: 250px;
 	height: 30px;
 }
@@ -86,8 +86,8 @@ $noteBorderColor: #AAAAAA;
 	position: absolute;
 	bottom: 130%;
 	left: 50%;
-	margin-left: ($tooltipWidth + (2 * $tooltipPadding)) / -2;
-	padding: $tooltipPadding;
+	margin-left: ($tooltipWidth + (2 * $textPadding)) / -2;
+	padding: $textPadding;
 	border-radius: 4px;
 	background-color: #222222;
 	width: $tooltipWidth;
@@ -130,11 +130,11 @@ $noteBorderColor: #AAAAAA;
 
 .notetitle {
 	grid-area: ntitle;
+	padding: $textPadding;
 	border: 0;
 	background-color: $noteBackgroundColor;
 	width: 220px;
 	height: 30px;
-	padding: 5px;
 }
 
 .notebutton {
@@ -151,7 +151,7 @@ $noteBorderColor: #AAAAAA;
 
 .notecontent {
 	resize: vertical;
-	padding: 5px;
+	padding: $textPadding;
 	border: 1px solid $noteBorderColor;
 	background-color: $noteBackgroundColor;
 	width: 250px;
@@ -177,14 +177,14 @@ $noteBorderColor: #AAAAAA;
 }
 
 #importcontent {
-	padding: 5px;
+	padding: $textPadding;
 	width: 80vw;
 	height: 60vh;
 	font-family: "Consolas", "Roboto Mono", "Courier New", "Courier";
 }
 
 #importbutton, #importcancel {
-	padding: 5px;
+	padding: $textPadding;
 	border: 1px solid #92290E;
 	background-color: #D2691E;
 }
