@@ -77,7 +77,7 @@
   position: absolute;
   bottom: 130%;
   left: 50%;
-  margin: 0 0 0 -55px;
+  margin-left: -55px;
   padding: 5px;
   border-radius: 4px;
   background-color: #222222;

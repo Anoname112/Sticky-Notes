@@ -1,4 +1,6 @@
 $sandSerif: "Tahoma", "Trebuchet MS", "Arial", "Helvetica";
+$tooltipWidth: 100px;
+$tooltipPadding: 5px;
 $noteBackgroundColor: #FFDEAD;
 $noteBorderColor: #AAAAAA;
 
@@ -84,11 +86,11 @@ $noteBorderColor: #AAAAAA;
 	position: absolute;
 	bottom: 130%;
 	left: 50%;
-	margin: 0 0 0 -55px;
-	padding: 5px;
+	margin-left: ($tooltipWidth + (2 * $tooltipPadding)) / -2;
+	padding: $tooltipPadding;
 	border-radius: 4px;
 	background-color: #222222;
-	width: 100px;
+	width: $tooltipWidth;
 	font-size: 12px;
 	color: #FFFFFF;
 	visibility: hidden;
