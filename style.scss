@@ -1,4 +1,4 @@
-$sandSerif: "Tahoma", "Segoe UI", "Trebuchet MS", "Arial", "Helvetica";
+$sansSerif: "Tahoma", "Segoe UI", "Trebuchet MS", "Arial", "Helvetica";
 $textPadding: 5px;
 $tooltipWidth: 100px;
 $noteBackgroundColor: #FFDEAD;
@@ -7,7 +7,7 @@ $noteBorderColor: #AAAAAA;
 *, body {
 	margin: 0;
 	padding: 0;
-	font-family: $sandSerif;
+	font-family: $sansSerif;
 	font-size: 15px;
 }
 
@@ -155,7 +155,7 @@ $noteBorderColor: #AAAAAA;
 	border: 1px solid $noteBorderColor;
 	background-color: $noteBackgroundColor;
 	width: 250px;
-	font-family: $sandSerif;
+	font-family: $sansSerif;
 }
 
 #importdiv {
