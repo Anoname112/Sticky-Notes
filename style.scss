@@ -1,4 +1,5 @@
 $sansSerif: "Tahoma", "Segoe UI", "Trebuchet MS", "Arial", "Helvetica";
+$monoSpace: "Consolas", "Roboto Mono", "Courier New", "Courier";
 $textPadding: 5px;
 $tooltipWidth: 100px;
 $noteBackgroundColor: #FFDEAD;
@@ -180,7 +181,7 @@ $noteBorderColor: #AAAAAA;
 	padding: $textPadding;
 	width: 80vw;
 	height: 60vh;
-	font-family: "Consolas", "Roboto Mono", "Courier New", "Courier";
+	font-family: $monoSpace;
 }
 
 #importbutton, #importcancel {
