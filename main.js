@@ -44,7 +44,8 @@ function resizeNotes (e) {
 function enlargeNote () {
 	// resize note to make the vertical scroll invisible
 	for (var i = 0; i < notesdata.length; i++) {
-		if (d.getElementById('notecontent' + i)) notesdata[i].height = (d.getElementById('notecontent' + i).scrollHeight + 2) + 'px';
+		var element = d.getElementById('notecontent' + i);
+		if (element && element.scrollHeight - parseFloat(notesdata[i].height) > 10) notesdata[i].height = (element.scrollHeight - 9) + 'px';
 	}
 	generateNotes();
 	saveToStorage();
