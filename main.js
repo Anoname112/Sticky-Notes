@@ -16,16 +16,50 @@ var importcancel;
 
 var notesdata;
 
-function parseJSON (string) {
-    try {
-		var obj = JSON.parse(string);
-		if (obj && typeof obj === "object") {
-			return obj;
-		}
-    }
-    catch (e) { }
+window.onload = function () {
+	d = document;
+	filter = d.getElementById('filter');
+	addsvg = d.getElementById('addsvg');
+	enlargesvg = d.getElementById('enlargesvg');
+	clipboardsvg = d.getElementById('clipboardsvg');
+	importsvg = d.getElementById('importsvg');
 	
-    return false;
+	addtooltip = d.getElementById('addtooltip');
+	addtooltip.innerHTML = addstring;
+	enlargetooltip = d.getElementById('enlargetooltip');
+	enlargetooltip.innerHTML = enlargestring;
+	clipboardtooltip = d.getElementById('clipboardtooltip');
+	clipboardtooltip.innerHTML = clipboardstring;
+	importtooltip = d.getElementById('importtooltip');
+	importtooltip.innerHTML = importstring;
+	
+	notesdiv = d.getElementById('notesdiv');
+	
+	importdiv = d.getElementById('importdiv');
+	importcontent = d.getElementById('importcontent');
+	importbutton = d.getElementById('importbutton');
+	importcancel = d.getElementById('importcancel');
+	
+	window.onmouseup = resizeNotes;
+	
+	if (localStorage.length > 0) {
+		loadFromStorage();
+	}
+	else {
+		notesdata = [];
+		addNote();
+	}
+	
+	filter.focus();
+}
+
+function loadFromStorage () {
+	notesdata = JSON.parse(localStorage.getItem('notesdata'));
+	generateNotes();
+}
+
+function saveToStorage () {
+	localStorage.setItem('notesdata', JSON.stringify(notesdata));
 }
 
 function updateNote (index) {
@@ -136,48 +170,14 @@ function importData () {
 	alert("Error: Invalid import data.");
 }
 
-function loadFromStorage () {
-	notesdata = JSON.parse(localStorage.getItem('notesdata'));
-	generateNotes();
+function parseJSON (string) {
+    try {
+		var obj = JSON.parse(string);
+		if (obj && typeof obj === "object") {
+			return obj;
+		}
+    }
+    catch (e) { }
+	
+    return false;
 }
-
-function saveToStorage () {
-	localStorage.setItem('notesdata', JSON.stringify(notesdata));
-}
-
-window.onload = function () {
-	d = document;
-	filter = d.getElementById('filter');
-	addsvg = d.getElementById('addsvg');
-	enlargesvg = d.getElementById('enlargesvg');
-	clipboardsvg = d.getElementById('clipboardsvg');
-	importsvg = d.getElementById('importsvg');
-	
-	addtooltip = d.getElementById('addtooltip');
-	addtooltip.innerHTML = addstring;
-	enlargetooltip = d.getElementById('enlargetooltip');
-	enlargetooltip.innerHTML = enlargestring;
-	clipboardtooltip = d.getElementById('clipboardtooltip');
-	clipboardtooltip.innerHTML = clipboardstring;
-	importtooltip = d.getElementById('importtooltip');
-	importtooltip.innerHTML = importstring;
-	
-	notesdiv = d.getElementById('notesdiv');
-	
-	importdiv = d.getElementById('importdiv');
-	importcontent = d.getElementById('importcontent');
-	importbutton = d.getElementById('importbutton');
-	importcancel = d.getElementById('importcancel');
-	
-	window.onmouseup = resizeNotes;
-	
-	if (localStorage.length > 0) {
-		loadFromStorage();
-	}
-	else {
-		notesdata = [];
-		addNote();
-	}
-	
-	filter.focus();
-};
