@@ -153,6 +153,7 @@ $noteBorderColor: #AAAAAA;
 .notecontent {
 	resize: vertical;
 	padding: $textPadding;
+	vertical-align: top;
 	border: 1px solid $noteBorderColor;
 	background-color: $noteBackgroundColor;
 	width: 250px;
