@@ -36,7 +36,7 @@ function updateNote (index) {
 
 function resizeNotes (e) {
 	for (var i = 0; i < notesdata.length; i++) {
-		if (d.getElementById('notecontent' + i)) notesdata[i].height = d.getElementById('notecontent' + i).style.height;
+		if (d.getElementById('notecontent' + i)) notesdata[i].height = (d.getElementById('notecontent' + i).style.height) + 'px';
 	}
 	saveToStorage();
 }
@@ -44,7 +44,7 @@ function resizeNotes (e) {
 function enlargeNote () {
 	// resize note to make the vertical scroll invisible
 	for (var i = 0; i < notesdata.length; i++) {
-		if (d.getElementById('notecontent' + i)) notesdata[i].height = d.getElementById('notecontent' + i).scrollHeight + 2;
+		if (d.getElementById('notecontent' + i)) notesdata[i].height = (d.getElementById('notecontent' + i).scrollHeight + 2) + 'px';
 	}
 	generateNotes();
 	saveToStorage();
