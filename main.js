@@ -61,7 +61,7 @@ function addNote () {
 	notesdata.push({
 		'title': '',
 		'content': '',
-		'height': noteheight
+		'height': noteheight + 'px'
 	});
 	generateNotes();
 	saveToStorage();
