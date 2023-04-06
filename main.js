@@ -106,13 +106,13 @@ function enlargeNote () {
 	saveToStorage();
 }
 
-function mouseLeave() {
-	clipboardtooltip.innerHTML = clipboardstring;
-}
-
 function copyToClipboard () {
 	navigator.clipboard.writeText(localStorage.getItem('notesdata'));
 	clipboardtooltip.innerHTML = copiedstring;
+}
+
+function mouseLeave() {
+	clipboardtooltip.innerHTML = clipboardstring;
 }
 
 function openImportDialog () {
