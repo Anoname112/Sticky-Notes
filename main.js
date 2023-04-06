@@ -75,16 +75,6 @@ function resizeNotes (e) {
 	saveToStorage();
 }
 
-function enlargeNote () {
-	// resize note to make the vertical scroll invisible
-	for (var i = 0; i < notesdata.length; i++) {
-		var element = d.getElementById('notecontent' + i);
-		if (element && element.scrollHeight - parseFloat(notesdata[i].height) > 10) notesdata[i].height = (element.scrollHeight - 9) + 'px';
-	}
-	generateNotes();
-	saveToStorage();
-}
-
 function deleteNote (index) {
 	notesdata.splice(index, 1);
 	//if (notesdata.length == 0) addNote();
@@ -98,6 +88,16 @@ function addNote () {
 		'content': '',
 		'height': noteheight + 'px'
 	});
+	generateNotes();
+	saveToStorage();
+}
+
+function enlargeNote () {
+	// resize note to make the vertical scroll invisible
+	for (var i = 0; i < notesdata.length; i++) {
+		var element = d.getElementById('notecontent' + i);
+		if (element && element.scrollHeight - parseFloat(notesdata[i].height) > 10) notesdata[i].height = (element.scrollHeight - 9) + 'px';
+	}
 	generateNotes();
 	saveToStorage();
 }
