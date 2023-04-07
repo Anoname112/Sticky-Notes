@@ -33,7 +33,7 @@ $noteBorderColor: #AAAAAA;
 
 .control {
 	grid-area: control;
-	padding: 10px;
+	padding: 10px 0 10px 0;
 	background-color: #D2691E;
 	text-align: center;
 	display: grid;
@@ -50,7 +50,6 @@ $noteBorderColor: #AAAAAA;
 #filter {
 	padding: $textPadding;
 	width: 250px;
-	height: 30px;
 }
 
 .buttondiv {
